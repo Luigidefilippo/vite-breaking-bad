@@ -3,6 +3,7 @@ import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import AppLoader from "./components/AppLoader.vue";
 import { store } from "./components/store";
+import axios from "axios";
 export default {
   components: {
     AppHeader,
@@ -13,6 +14,11 @@ export default {
     return {
       store,
     };
+  },
+  mounted() {
+    axios.get(store.apiURL).then((resp) => {
+      this.store.cards = resp.data.data;
+    });
   },
 };
 </script>
