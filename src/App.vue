@@ -16,8 +16,10 @@ export default {
     };
   },
   mounted() {
+    store.loader = true;
     axios.get(store.apiURL).then((resp) => {
       this.store.cards = resp.data.data;
+      store.loader = false;
     });
   },
 };

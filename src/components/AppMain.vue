@@ -1,10 +1,12 @@
 <script>
 import DeckCard from "./DeckCard.vue";
 import { store } from "./store";
+import AppLoader from "./AppLoader.vue";
 export default {
   name: "AppMain",
   components: {
     DeckCard,
+    AppLoader,
   },
   data() {
     return {
